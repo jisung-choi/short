@@ -34,8 +34,8 @@ export class HomePageComponent implements OnInit, OnDestroy{
   
   ngOnInit(): void {
     this._setHostingAddress();
-    
-    if(this.router.url === '/'){
+    const currentUrl = window.location.href;
+    if(currentUrl === 'https://jisung-choi.github.io/short/'){
       this.hasParam = false;
     } else {
       this.route.params.subscribe(params => {
