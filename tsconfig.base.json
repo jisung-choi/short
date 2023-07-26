@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@angular/*": ["./node_modules/@angular/*"]
+      "@angular/*": ["./node_modules/@angular/*"],
+      "@my-project/url": ["libs/url/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

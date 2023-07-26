@@ -1,2 +1,24 @@
-<p>homepage</p>
-<p-button label="Submit" icon="pi pi-check"></p-button>
+<p-toast></p-toast>
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;" *ngIf="!hasParam">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <p-card header="Short Url" [style]="{ width: '100%' }" styleClass="custom-card-shadow">
+        <div style="display: flex; align-items: center;">
+          <input 
+              style="width: 280px; height: 40px; font-size: 16px; margin-right: 5%;"              
+              type="text" 
+              placeholder="Type your url" 
+              name="urlInput"
+              id="urlInput"
+              (keypress)="onUrlEnter($event)"
+          />
+          <p-button label="Submit" icon="pi pi-check" (onClick)="onClickUrl()"></p-button>
+        </div>
+        <div class="grid" *ngIf="id" style="margin-top: 3%; display: flex; justify-content: center;">
+            <p style="margin-right: 5%;">
+                {{hostingAddress}}{{id}}
+            </p>
+            <p-button icon="pi pi-copy" (onClick)="onClickCopy()"></p-button>
+        </div>
+      </p-card>
+    </div>
+  </div>

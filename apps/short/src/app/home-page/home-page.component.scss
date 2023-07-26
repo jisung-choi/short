@@ -1,5 +1,10 @@
-//Library
-@import '~primeng/resources/primeng.css';
-@import '~primeng/resources/themes/saga-blue/theme.css';
-@import '~primeicons/primeicons.css';
-@import '~primeflex/primeflex.css';
+body {
+    background: rgb(137,200,250);
+    background: linear-gradient(60deg, rgba(137,200,250,1) 0%, rgba(5,70,121,1) 86%);
+    margin: 0; /* Reset default margin to remove extra space */
+    padding: 0; /* Reset default padding to remove extra space */
+}
+
+.custom-card-shadow {
+    box-shadow: 0 4px 8px rgba(0.5, 0.5, 0, 0.5); /* Adjust the shadow properties as needed */
+}

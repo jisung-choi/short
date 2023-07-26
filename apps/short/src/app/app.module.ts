@@ -6,14 +6,22 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { appRoutes } from './app.routes';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { CardModule } from 'primeng/card';
-import { AccordionModule } from 'primeng/accordion';
+import { MessagesModule } from 'primeng/messages';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
+  {
+    path: ':id',
+    component: HomePageComponent
+  },
 ]
 
 @NgModule({
@@ -24,10 +32,13 @@ const routes: Routes = [
     InputTextModule,
     CardModule,
     ReactiveFormsModule,
-    AccordionModule,
+    HttpClientModule,
+    MessagesModule,
+    ToastModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
