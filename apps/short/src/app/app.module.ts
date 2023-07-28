@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { appRoutes } from './app.routes';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,13 +14,10 @@ import { MessagesModule } from 'primeng/messages';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RerouteModule } from '@my-project/reroute';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
-  {
-    path: '/:id',
-    component: HomePageComponent
-  },
 ]
 
 @NgModule({
@@ -36,6 +32,7 @@ const routes: Routes = [
     MessagesModule,
     ToastModule,
     BrowserAnimationsModule,
+    RerouteModule,
     RouterModule.forRoot(routes),
   ],
   providers: [MessageService],

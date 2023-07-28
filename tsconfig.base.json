@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@angular/*": ["./node_modules/@angular/*"],
+      "@my-project/reroute": ["libs/reroute/src/index.ts"],
       "@my-project/url": ["libs/url/src/index.ts"]
     }
   },
