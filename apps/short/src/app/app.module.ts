@@ -19,7 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const routes: Routes = [
   {path: '', component: HomePageComponent},
   {
-    path: ':id',
+    path: '/:id',
     component: HomePageComponent
   },
 ]
