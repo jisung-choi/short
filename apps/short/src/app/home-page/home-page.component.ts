@@ -37,14 +37,15 @@ export class HomePageComponent implements OnInit, OnDestroy{
     const currentUrl = window.location.href;
     if(currentUrl === 'https://jisung-choi.github.io/short/'){
       this.hasParam = false;
-    } else {
-      this.route.params.subscribe(params => {
-        if(params['id']){
-          const id = params['id'];
-          this._getOriginalUrl(id);
-        }
-      })
-    }
+  }
+    // } else {
+    //   this.route.params.subscribe(params => {
+    //     if(params['id']){
+    //       const id = params['id'];
+    //       this._getOriginalUrl(id);
+    //     }
+    //   })
+    // }
   }
 
   async onUrlEnter(event?: KeyboardEvent) {
@@ -96,13 +97,13 @@ export class HomePageComponent implements OnInit, OnDestroy{
     this.hostingAddress = window.location.href.replace(currentUrl, '');
   }
 
-  private _getOriginalUrl(id:string) {
-    console.log(id);
-    this.urlsService.getOriginal(id).pipe(takeUntil(this.endSubs$)).subscribe((original) => {
-      console.log(original.originalURL);
-      window.location.href = 'https://'+<string>original.originalURL;
-    });
-  }
+  // private _getOriginalUrl(id:string) {
+  //   console.log(id);
+  //   this.urlsService.getOriginal(id).pipe(takeUntil(this.endSubs$)).subscribe((original) => {
+  //     console.log(original.originalURL);
+  //     window.location.href = 'https://'+<string>original.originalURL;
+  //   });
+  // }
 
   private async _getNewId(): Promise<string>{
     let id ="";
