@@ -14,10 +14,10 @@ import { MessagesModule } from 'primeng/messages';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RerouteModule } from '@my-project/reroute';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
+  {path: ':id', component:HomePageComponent}
 ]
 
 @NgModule({
@@ -32,7 +32,7 @@ const routes: Routes = [
     MessagesModule,
     ToastModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes,  { useHash: true }),
+    RouterModule.forRoot(routes),
   ],
   providers: [MessageService],
   bootstrap: [AppComponent],

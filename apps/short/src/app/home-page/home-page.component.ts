@@ -14,7 +14,7 @@ import { MessageService } from 'primeng/api';
 export class HomePageComponent implements OnInit, OnDestroy{
   hostingAddress="";
   id="";
-  hasParam = true;
+  hasParam = false;
   inputElement: HTMLInputElement;
 
   constructor(
@@ -35,17 +35,13 @@ export class HomePageComponent implements OnInit, OnDestroy{
   ngOnInit(): void {
     this._setHostingAddress();
     const currentUrl = window.location.href;
-    if(currentUrl === 'https://jisung-choi.github.io/short/'){
-      this.hasParam = false;
-  }
-    // } else {
-    //   this.route.params.subscribe(params => {
-    //     if(params['id']){
-    //       const id = params['id'];
-    //       this._getOriginalUrl(id);
-    //     }
-    //   })
-    // }
+      this.route.params.subscribe(params => {
+        if(params['id']){
+          this.hasParam = true;
+          const id = params['id'];
+          this._getOriginalUrl(id);
+        }
+      })
   }
 
   async onUrlEnter(event?: KeyboardEvent) {
@@ -97,13 +93,13 @@ export class HomePageComponent implements OnInit, OnDestroy{
     this.hostingAddress = window.location.href.replace(currentUrl, '');
   }
 
-  // private _getOriginalUrl(id:string) {
-  //   console.log(id);
-  //   this.urlsService.getOriginal(id).pipe(takeUntil(this.endSubs$)).subscribe((original) => {
-  //     console.log(original.originalURL);
-  //     window.location.href = 'https://'+<string>original.originalURL;
-  //   });
-  // }
+  private _getOriginalUrl(id:string) {
+    console.log(id);
+    this.urlsService.getOriginal(id).pipe(takeUntil(this.endSubs$)).subscribe((original) => {
+      console.log(original.originalURL);
+      window.location.href = 'https://'+<string>original.originalURL;
+    });
+  }
 
   private async _getNewId(): Promise<string>{
     let id ="";
