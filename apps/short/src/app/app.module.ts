@@ -36,7 +36,7 @@ const routes: Routes = [
     MessagesModule,
     ToastModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes,  { useHash: true }),
   ],
   providers: [MessageService],
   bootstrap: [AppComponent],
