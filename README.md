@@ -1,4 +1,4 @@
-# TinrUrl Website
+# Tiny URL Project
 ### DEMO: https://jisung-choi.github.io/short/
 
 ## Table of Contents
