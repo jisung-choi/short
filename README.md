@@ -46,6 +46,9 @@ Two distinct methodologies exist for database cleanup: a regular cleanup approac
 Conversely, this project has adopted a strategy of regular database cleanup, informed by the relatively modest quantity of 'Tiny' URLs (approximately one million) and the imperative to recycle expired Tiny URLs. It is worth noting that this approach does entail the drawback of exerting a recurring burden on the database infrastructure, as alluded to above.
 
 
+### NoSql database
+**Rationale**
 
+For this project, I opted to utilize a NoSQL database, taking into consideration its potential for scalability and adaptability. The current data schema encompasses key attributes like shortenedURL, original URL, and expiration date. While additional elements, such as user information, credentials, and creation date, might be integrated into the schema in the future, the primary goal is to facilitate the expansion of functionalities. Unlike traditional SQL databases, which excel in ensuring data integrity and supporting intricate data relationships (as observed in banking softwares and social media platforms like Facebook), the project's unique requirements did not align with these strengths. The decision to employ a NoSQL database positions the project to effectively embrace growth and enable seamless progression.
 
 
